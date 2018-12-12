@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <div style="height: 500px;">
+    <div style="height: 400px;">
       <LineChart></LineChart>
       <BarChart :barData="barDataInfo"></BarChart>
     </div>
@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import LineChart from '@/components/line.vue'
 import BarChart from './bar.vue'
+import LineChart from '@/components/echarts/line.vue'
 export default {
   name: 'HelloWorld',
   components: {
