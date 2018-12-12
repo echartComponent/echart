@@ -9,8 +9,7 @@
   name: 'bar',
   data () { 	
     return {
-      myChart: '',
-      ass:'aaa'
+      myChart: ''
     }
   },
   props: {

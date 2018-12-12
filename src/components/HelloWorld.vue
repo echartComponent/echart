@@ -3,8 +3,8 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <div style="height: 400px;">
-      <LineChart></LineChart>
       <BarChart :barData="barDataInfo"></BarChart>
+      <LineChart :seriesData="data"></LineChart>
     </div>
   </div>
 </template>
@@ -52,7 +52,19 @@ export default {
           data: [10, 52, 200, 334, 390, 330, 220]
         }]
       }
+      data: []
     }
+  },
+  mounted () {
+    let i = 1
+    setInterval(() => {
+      if (i % 2 === 0) {
+        this.data = [820, 932, 901, 934, 1290, 1330, 1320]
+      } else {
+        this.data = [220, 532, 1201, 934, 190, 430, 1820]
+      }
+      i++
+    }, 3000)
   }
 }
 </script>
