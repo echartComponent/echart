@@ -6,12 +6,13 @@
 <script>
 import echarts from 'echarts/lib/echarts'
 import 'echarts/lib/chart/line'
-import chartConfig from './echart'
-import { extend } from './extend'
+import chartConfig from './common/echart'
+import { extend } from './common/extend'
 export default {
   mixins: [chartConfig],
   data () {
     return {
+      type: 'line'
     }
   },
   mounted () {
@@ -33,7 +34,7 @@ export default {
         legend: this.legendConfig,
         xAxis: this.xAxisConfig,
         yAxis: this.yAxisConfig,
-        series: this.seriesData
+        series: this.seriesConfig
       }, this.configOption))
       this.myChart.setOption(extend({
         color: this.colorConfig,
@@ -42,7 +43,7 @@ export default {
         legend: this.legendConfig,
         xAxis: this.xAxisConfig,
         yAxis: this.yAxisConfig,
-        series: this.seriesData
+        series: this.seriesConfig
       }, this.configOption))
     }
   }

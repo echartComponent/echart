@@ -14,11 +14,7 @@ export default {
     },
     seriesData: {
       type: [Object, Array],
-      default: () => [{
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
-        type: 'line',
-        smooth: true
-      }]
+      default: () => [820, 932, 901, 934, 1290, 1330, 1320]
     },
     xAxisData: {
       type: [Object, Array],
@@ -39,11 +35,10 @@ export default {
   },
   data () {
     return {
-      type: 'line',
       myChart: '',
       colorConfig: ['#83d0d5', '#f1cb48', '#188ae2', '#E8830B', '#7460ae', '#fc4b6c', '#31ce77', '#eae0bc', '#e732cb', '#9dce8a'],
       titleConfig: {
-        text: this.title,
+        text: 'this.title',
         left: '35',
         top: '20',
         textStyle: {
@@ -126,18 +121,26 @@ export default {
             }
           }
         }
-      ]
+      ],
+      seriesConfig: [{
+        data: this.seriesData,
+        type: this.type || 'line',
+        smooth: true
+      }]
     }
   },
   watch: {
-    seriesData: (data) => {
-      this.resizeChart()
+    seriesData: function (data) {
+      this.seriesConfig[0].data = this.seriesData
+      this.initChart()
     },
-    xAxisData: (data) => {
-      this.resizeChart()
+    xAxisData: function (data) {
+      this.xAxisConfig[0].data = this.xAxisData
+      this.initChart()
     },
-    yAxisData: (data) => {
-      this.resizeChart()
+    yAxisData: function (data) {
+      this.yAxisConfig[0].data = this.yAxisData
+      this.initChart()
     }
   },
   methods: {
