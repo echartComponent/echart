@@ -4,16 +4,19 @@
     <h2>Essential Links</h2>
     <div style="height: 400px;">
       <LineChart :seriesData="data"></LineChart>
+      <DataSet />
     </div>
   </div>
 </template>
 
 <script>
 import LineChart from '@/components/echarts/line.vue'
+import DataSet from '@/components/echarts/dataset.vue'
 export default {
   name: 'HelloWorld',
   components: {
-    LineChart
+    LineChart,
+    DataSet
   },
   data () {
     return {

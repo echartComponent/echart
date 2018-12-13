@@ -26,11 +26,7 @@ export default {
     },
     configOption: {
       type: [Object, Array],
-      default: () => ({
-        yAxis: [{
-          left: '10%'
-        }]
-      })
+      default: () => ({})
     }
   },
   data () {
@@ -38,11 +34,11 @@ export default {
       myChart: '',
       colorConfig: ['#83d0d5', '#f1cb48', '#188ae2', '#E8830B', '#7460ae', '#fc4b6c', '#31ce77', '#eae0bc', '#e732cb', '#9dce8a'],
       titleConfig: {
-        text: 'this.title',
-        left: '35',
+        text: this.title,
+        left: 'center',
         top: '20',
         textStyle: {
-          color: '#000'
+          color: '#333'
         }
       },
       tooltipConfig: {
