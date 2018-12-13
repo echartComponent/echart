@@ -1,28 +1,28 @@
 <template>
-	<div ref="mapChart" class="chart">
+	<div ref="scatterChart" class="chart">
   </div>
 </template>
 <script>
 	import echarts from 'echarts/lib/echarts'
-	import 'echarts/lib/chart/bar'
+	import 'echarts/lib/chart/scatter'
 	export default {
-  name: 'map',
+  name: 'scatter',
   data () { 	
     return {
       myChart: ''
     }
   },
   props: {
-    mapData: {}
+    scatterData: {}
   },
   mounted () {
     this.initChart()
   },
   methods: {
     initChart () {
-      this.myChart = echarts.init(this.$refs.mapChart)
-      console.log(this.mapData)
-      this.myChart.setOption(this.mapData)
+      this.myChart = echarts.init(this.$refs.scatterChart)
+      console.log(this.scatterData)
+      this.myChart.setOption(this.scatterData)
     }
   }
 }
