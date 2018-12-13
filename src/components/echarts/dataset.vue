@@ -58,6 +58,9 @@ export default {
         legend: this.legendConfig,
         xAxis: this.xAxis,
         yAxis: this.yAxis,
+        dataset: {
+          source: this.source
+        },
         grid: this.grid,
         series: this.series
       }, this.configOption))

@@ -4,14 +4,6 @@ export default {
       type: String,
       default: '标题'
     },
-    width: {
-      type: Number,
-      default: null
-    },
-    height: {
-      type: Number,
-      default: null
-    },
     seriesData: {
       type: [Object, Array],
       default: () => [820, 932, 901, 934, 1290, 1330, 1320]
