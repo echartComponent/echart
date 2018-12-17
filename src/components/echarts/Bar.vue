@@ -6,6 +6,7 @@
 	import echarts from 'echarts/lib/echarts'
 	import 'echarts/lib/chart/bar'
   import chartConfig from './common/echart'
+  import { extend } from './common/extend'  
 	export default {
   mixins: [chartConfig],
   name: 'bar',
@@ -29,7 +30,7 @@
   methods: {
     initChart () {
       this.myChart = echarts.init(this.$refs.barChart)
-      console.log(this.barData.option)
+      console.log(this.titleConfig)
       //this.myChart.setOption(this.barData.option)
       this.myChart.setOption(extend({
         color: this.colorConfig,
@@ -39,7 +40,7 @@
         xAxis: this.xAxisConfig,
         yAxis: this.yAxisConfig,
         series: this.seriesConfig
-      }, this.barData.option))
+      }, this.barData))
     }
   }
 }
