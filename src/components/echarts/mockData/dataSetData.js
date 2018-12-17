@@ -1,11 +1,12 @@
-export const dataJson = {
-  source: [
-    ['product', '2012', '2013', '2014', '2015'],
-    ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
-    ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
-    ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
-  ],
+export const datasetJson = {
+  
   map1: {
+    source: [
+      ['product', '2012', '2013', '2014', '2015'],
+      ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+      ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+      ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+    ],
     xAxis: {type: 'category'},
     yAxis: {gridIndex: 0},
     grid: {top: '55%'},
@@ -31,6 +32,12 @@ export const dataJson = {
     ]
   },
   map2: {
+    source: [
+      ['product', '2012', '2013', '2014', '2015'],
+      ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+      ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+      ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+    ],
     xAxis: [
       {type: 'category', gridIndex: 0},
       {type: 'category', gridIndex: 1}
@@ -54,6 +61,12 @@ export const dataJson = {
     ]
   },
   map3: {
+    source: [
+      ['product', '2012', '2013', '2014', '2015'],
+      ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+      ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+      ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+    ],
     series:[{
       type: 'pie',
       radius: 60,

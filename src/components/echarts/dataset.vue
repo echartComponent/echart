@@ -14,29 +14,6 @@ export default {
   mixins: [chartConfig],
   data () {
     return {
-      type: 'line'
-    }
-  },
-  props: {
-    source: {
-      type: [Object, Array],
-      default: () => []
-    },
-    xAxis: {
-      type: [Object, Array],
-      default: () => []
-    },
-    yAxis: {
-      type: [Object, Array],
-      default: () => []
-    },
-    grid: {
-      type: [Object, Array],
-      default: () => []
-    },
-    series: {
-      type: [Object, Array],
-      default: () => []
     }
   },
   mounted () {
@@ -51,18 +28,32 @@ export default {
   methods: {
     initChart () {
       this.myChart = echarts.init(this.$refs.echarts)
+      console.log(this.optionData)
+      console.log(extend({
+        color: this.colorConfig,
+        title: this.titleConfig,
+        tooltip: this.tooltipConfig,
+        legend: this.legendConfig,
+        xAxis: this.optionData.xAxis || [],
+        yAxis: this.optionData.yAxis || [],
+        dataset: {
+          source: this.optionData.source || []
+        },
+        grid: this.optionData.grid || {},
+        series: this.optionData.series || []
+      }, this.configOption))
       this.myChart.setOption(extend({
         color: this.colorConfig,
         title: this.titleConfig,
         tooltip: this.tooltipConfig,
         legend: this.legendConfig,
-        xAxis: this.xAxis,
-        yAxis: this.yAxis,
+        xAxis: this.optionData.xAxis || [],
+        yAxis: this.optionData.yAxis || [],
         dataset: {
-          source: this.source
+          source: this.optionData.source || []
         },
-        grid: this.grid,
-        series: this.series
+        grid: this.optionData.grid || {},
+        series: this.optionData.series || []
       }, this.configOption))
     }
   }

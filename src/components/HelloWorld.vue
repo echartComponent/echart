@@ -3,11 +3,8 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <div style="height: 400px;">
-      <LineChart :seriesData="data"></LineChart>
-      <DataSet />
       <BarChart :barData="barDataInfo"></BarChart>
       <Scatter :scatterData="scatterDataInfo"></Scatter>
-      <Map :mapData="mapDataInfo"></Map>
     </div>
 
   </div>

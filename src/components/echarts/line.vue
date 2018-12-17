@@ -12,7 +12,78 @@ export default {
   mixins: [chartConfig],
   data () {
     return {
-      type: 'line'
+      type: 'line',
+      legendConfig: {
+        data: this.optionData.legendData || [],
+        left: 'center',
+        bottom: '0',
+        textStyle: {
+          color: '#B6B6B6'
+        }
+      },
+      xAxisConfig: [
+        {
+          type: 'category',
+          position: 'bottom',
+          name: '',
+          nameLocation: 'center',
+          nameGap: '50',
+          data: this.optionData.xAxisData || ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            textStyle: {
+              color: '#BFC2C8'
+            },
+            rotate: 30,
+            interval: 0
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#BFC2C8'
+            }
+          }
+        }
+      ],
+      yAxisConfig: [
+        {
+          type: 'value',
+          left: '0',
+          name: '',
+          nameLocation: 'center',
+          nameGap: '45',
+          axisLine: {
+            lineStyle: {
+              color: '#BFC2C8'
+            }
+          },
+          axisTick: {
+            show: false
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#898D95'
+            }
+          },
+          axisLabel: {
+            textStyle: {
+              color: '#BFC2C8'
+            },
+            interval: 0,
+            formatter: function (value, index) {
+              if (value >= 1000 && value < 10000000) {
+                value = value / 1000 + 'K'
+              } else if (value >= 1000000 && value < 1000000000) {
+                value = value / 1000000 + 'M'
+              } else if (value >= 1000000000) {
+                value = value / 1000000000 + 'B'
+              }
+              return value
+            }
+          }
+        }
+      ],
     }
   },
   mounted () {
@@ -26,6 +97,10 @@ export default {
   },
   methods: {
     initChart () {
+      this.seriesConfig = this.optionData.series || []
+      for(let item of this.seriesConfig) {
+        item.type = this.type
+      }
       this.myChart = echarts.init(this.$refs.echarts)
       this.myChart.setOption(extend({
         color: this.colorConfig,
