@@ -6,11 +6,8 @@
       <BarChart :barData="barDataInfo"></BarChart>
       <Scatter :scatterData="scatterDataInfo"></Scatter>
     </div>
-
   </div>
-
 </template>
-
 <script>
 import BarChart from '@/components/echarts/Bar.vue'
 import MapChart from '@/components/echarts/Map.vue'
