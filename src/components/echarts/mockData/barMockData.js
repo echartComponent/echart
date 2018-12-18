@@ -1,4 +1,4 @@
-export const barData = {  
+export const barData = {
   color: ['#3398DB'],
   tooltip: {
     trigger: 'axis',

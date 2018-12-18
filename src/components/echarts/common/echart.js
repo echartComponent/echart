@@ -14,7 +14,7 @@ export default {
       myChart: '',
       colorConfig: ['#83d0d5', '#f1cb48', '#188ae2', '#E8830B', '#7460ae', '#fc4b6c', '#31ce77', '#eae0bc', '#e732cb', '#9dce8a'],
       titleConfig: {
-        text: this.title||'标题',
+        text: '',
         left: 'center',
         top: '20',
         textStyle: {
@@ -43,6 +43,7 @@ export default {
   },
   watch: {
     optionData: function (data) {
+      this.titleConfig.title = this.optionData.title || ''
       this.initChart()
     }
   },

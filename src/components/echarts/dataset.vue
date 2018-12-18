@@ -29,19 +29,6 @@ export default {
     initChart () {
       this.myChart = echarts.init(this.$refs.echarts)
       console.log(this.optionData)
-      console.log(extend({
-        color: this.colorConfig,
-        title: this.titleConfig,
-        tooltip: this.tooltipConfig,
-        legend: this.legendConfig,
-        xAxis: this.optionData.xAxis || [],
-        yAxis: this.optionData.yAxis || [],
-        dataset: {
-          source: this.optionData.source || []
-        },
-        grid: this.optionData.grid || {},
-        series: this.optionData.series || []
-      }, this.configOption))
       this.myChart.setOption(extend({
         color: this.colorConfig,
         title: this.titleConfig,

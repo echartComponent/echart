@@ -1,5 +1,4 @@
 export const datasetJson = {
-  
   map1: {
     source: [
       ['product', '2012', '2013', '2014', '2015'],
@@ -67,7 +66,7 @@ export const datasetJson = {
       ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
       ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
     ],
-    series:[{
+    series: [{
       type: 'pie',
       radius: 60,
       center: ['25%', '30%']

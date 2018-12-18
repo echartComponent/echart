@@ -1,13 +1,13 @@
 <template>
-	<div ref="mapChart" class="chart">
+  <div ref="mapChart" class="chart">
   </div>
 </template>
 <script>
-	import echarts from 'echarts/lib/echarts'
-	import 'echarts/lib/chart/bar'
-	export default {
+import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/chart/bar'
+export default {
   name: 'map',
-  data () { 	
+  data () {
     return {
       myChart: ''
     }
@@ -28,7 +28,7 @@
 }
 </script>
 <style scope>
-	.chart{
+  .chart{
     width: 100%;
     height: 100%;
   }

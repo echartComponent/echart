@@ -1,16 +1,16 @@
 <template>
-	<div ref="barChart" class="chart">
+  <div ref="barChart" class="chart">
   </div>
 </template>
 <script>
-	import echarts from 'echarts/lib/echarts'
-	import 'echarts/lib/chart/bar'
-  import chartConfig from './common/echart'
-  import { extend } from './common/extend'  
-	export default {
+import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/chart/bar'
+import chartConfig from './common/echart'
+import { extend } from './common/extend'
+export default {
   mixins: [chartConfig],
   name: 'bar',
-  data () { 	
+  data () {
     return {
       myChart: ''
     }
@@ -31,7 +31,6 @@
     initChart () {
       this.myChart = echarts.init(this.$refs.barChart)
       console.log(this.titleConfig)
-      //this.myChart.setOption(this.barData.option)
       this.myChart.setOption(extend({
         color: this.colorConfig,
         title: this.titleConfig,
@@ -46,7 +45,7 @@
 }
 </script>
 <style scope>
-	.chart{
+  .chart{
     width: 100%;
     height: 100%;
   }

@@ -1,13 +1,13 @@
 <template>
-	<div ref="scatterChart" class="chart">
+  <div ref="scatterChart" class="chart">
   </div>
 </template>
 <script>
-	import echarts from 'echarts/lib/echarts'
-	import 'echarts/lib/chart/scatter'
-	export default {
+import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/chart/scatter'
+export default {
   name: 'scatter',
-  data () { 	
+  data () {
     return {
       myChart: ''
     }
@@ -28,7 +28,7 @@
 }
 </script>
 <style scope>
-	.chart{
+  .chart{
     width: 100%;
     height: 100%;
   }

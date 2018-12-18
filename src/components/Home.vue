@@ -2,7 +2,9 @@
   <div class="hello">
     <h2>Essential Links</h2>
     <div style="height: 400px;">
-      <LineChart :optionData="data"></LineChart>
+      <VehicleChart :optionData="vehicleData"/>
+      <SpiritChart :optionData="spiritData"/>
+      <LineChart :optionData="data"/>
       <DataSet :optionData="dataJson.map1"/>
       <DataSet :optionData="dataJson.map2"/>
       <DataSet :optionData="dataJson.map3"/>
@@ -11,21 +13,28 @@
 </template>
 
 <script>
-import LineChart from '@/components/echarts/line.vue'
-import DataSet from '@/components/echarts/dataset.vue'
+import LineChart from '@/components/echarts/Line.vue'
+import DataSet from '@/components/echarts/Dataset.vue'
+import SpiritChart from '@/components/echarts/Spirit.vue'
+import VehicleChart from '@/components/echarts/Vehicle.vue'
 import { datasetJson } from '@/components/echarts/mockData/dataSetData.js'
 import { lineDataJson } from '@/components/echarts/mockData/lineData.js'
+import { spiritDataJson } from '@/components/echarts/mockData/spiritData.js'
+import { vehicleDataJson } from '@/components/echarts/mockData/vehicleData.js'
 export default {
   name: 'HelloWorld',
   components: {
     LineChart,
-    DataSet
+    DataSet,
+    SpiritChart,
+    VehicleChart
   },
   data () {
     return {
       data: {},
       dataJson: datasetJson,
-      legendData: ['第一条']
+      spiritData: spiritDataJson,
+      vehicleData: vehicleDataJson
     }
   },
   mounted () {
@@ -37,7 +46,7 @@ export default {
         this.data = lineDataJson.data2
       }
       i++
-      if(i >= 5){
+      if (i >= 5) {
         clearInterval(t)
       }
     }, 3000)
