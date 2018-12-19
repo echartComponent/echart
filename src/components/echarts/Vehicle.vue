@@ -5,6 +5,9 @@
 
 <script>
 import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/component/title'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/component/tooltip'
 import 'echarts/lib/chart/pictorialBar'
 import chartConfig from './common/echart'
 import { extend } from './common/extend'
@@ -90,15 +93,6 @@ export default {
     initChart () {
       new Promise(this.setData).then(() => {
         this.myChart = echarts.init(this.$refs.echarts)
-        console.log(extend({
-          title: this.titleConfig,
-          tooltip: this.tooltipConfig,
-          legend: this.legendConfig,
-          xAxis: this.xAxisConfig,
-          yAxis: this.yAxisConfig,
-          grid: this.gridConfig,
-          series: this.seriesConfig
-        }, this.configOption))
         this.myChart.setOption(extend({
           title: this.titleConfig,
           tooltip: this.tooltipConfig,

@@ -8,25 +8,17 @@ import echarts from 'echarts/lib/echarts'
 import 'echarts/lib/component/title'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/tooltip'
-import 'echarts/lib/chart/radar'
+import 'echarts/lib/chart/pie'
 import chartConfig from './common/echart'
 import { extend } from './common/extend'
 export default {
   mixins: [chartConfig],
   data () {
     return {
-      type: 'radar',
-      radarConfig: {
-        name: {
-          textStyle: {
-            color: '#fff',
-            backgroundColor: '#333',
-            borderRadius: 20,
-            padding: [5, 15]
-          }
-        },
-        radius: '50%',
-        indicator: []
+      type: 'pie',
+      tooltipConfig: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
       },
       seriesConfig: []
     }
@@ -43,22 +35,17 @@ export default {
   methods: {
     setData (resolve) {
       this.legendConfig.data = this.optionData.legendData || []
-      this.radarConfig.indicator = this.optionData.indicator || []
-      this.seriesConfig = this.optionData.seriesData || []
-      for (let item of this.seriesConfig) {
-        item.type = this.type
-      }
+      let seriesArr = this.optionData.seriesData
+      this.seriesConfig = this.optionData.seriesData
       resolve()
     },
     initChart () {
       new Promise(this.setData).then(() => {
         this.myChart = echarts.init(this.$refs.echarts)
         this.myChart.setOption(extend({
-          color: this.colorConfig,
           title: this.titleConfig,
           tooltip: this.tooltipConfig,
           legend: this.legendConfig,
-          radar: this.radarConfig,
           series: this.seriesConfig
         }, this.configOption))
       })

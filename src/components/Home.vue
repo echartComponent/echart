@@ -2,6 +2,7 @@
   <div class="hello">
     <h2>Essential Links</h2>
     <div style="height: 400px;">
+      <RadarChart :optionData="radarData"/>
       <VehicleChart :optionData="vehicleData"/>
       <SpiritChart :optionData="spiritData"/>
       <LineChart :optionData="data"/>
@@ -17,24 +18,28 @@ import LineChart from '@/components/echarts/Line.vue'
 import DataSet from '@/components/echarts/Dataset.vue'
 import SpiritChart from '@/components/echarts/Spirit.vue'
 import VehicleChart from '@/components/echarts/Vehicle.vue'
+import RadarChart from '@/components/echarts/Radar.vue'
 import { datasetJson } from '@/components/echarts/mockData/dataSetData.js'
 import { lineDataJson } from '@/components/echarts/mockData/lineData.js'
 import { spiritDataJson } from '@/components/echarts/mockData/spiritData.js'
 import { vehicleDataJson } from '@/components/echarts/mockData/vehicleData.js'
+import { radarDataJson } from '@/components/echarts/mockData/radarData.js'
 export default {
   name: 'HelloWorld',
   components: {
     LineChart,
     DataSet,
     SpiritChart,
-    VehicleChart
+    VehicleChart,
+    RadarChart
   },
   data () {
     return {
       data: {},
       dataJson: datasetJson,
       spiritData: spiritDataJson,
-      vehicleData: vehicleDataJson
+      vehicleData: vehicleDataJson,
+      radarData: radarDataJson
     }
   },
   mounted () {

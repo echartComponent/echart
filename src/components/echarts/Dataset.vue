@@ -5,6 +5,9 @@
 
 <script>
 import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/component/title'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/component/tooltip'
 import 'echarts/lib/chart/line'
 import 'echarts/lib/chart/bar'
 import 'echarts/lib/chart/pie'
@@ -28,7 +31,6 @@ export default {
   methods: {
     initChart () {
       this.myChart = echarts.init(this.$refs.echarts)
-      console.log(this.optionData)
       this.myChart.setOption(extend({
         color: this.colorConfig,
         title: this.titleConfig,

@@ -5,6 +5,9 @@
 
 <script>
 import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/component/title'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/component/tooltip'
 import 'echarts/lib/chart/line'
 import chartConfig from './common/echart'
 import { extend } from './common/extend'
