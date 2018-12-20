@@ -71,7 +71,7 @@ export default {
     },
     setData (resolve) {
       this.legendConfig.data = this.optionData.legendData || []
-      this.gridConfig.left = this.optionData.gridLeft || 20
+      this.gridConfig.left = this.optionData.gridLeftData || 20
       this.yAxisConfig.data = this.optionData.yAxisData || []
       let seriesArr = this.optionData.seriesData
       this.seriesConfig = []

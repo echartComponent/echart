@@ -1,7 +1,7 @@
 export const radarDataJson = {
   title: '基础雷达图',
   legendData: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）'],
-  indicator: [
+  indicatorData: [
     {name: '销售（sales）', max: 6500},
     {name: '管理（Administration）', max: 16000},
     {name: '信息技术（Information Techology）', max: 30000},

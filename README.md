@@ -54,9 +54,15 @@ mockData文件夹代表组件的举例数据，传参参考
 
           2.xAxisData: x轴数据
 
-          3.series: series数据
+          3.seriesData: series数据
 
     二.饼图
+
+      主要数据有：
+
+          1.legendData: legend数据
+
+          2.seriesData: series数据
 
     三.柱状图
 
@@ -68,7 +74,7 @@ mockData文件夹代表组件的举例数据，传参参考
 
           1.legendData： legend数据
 
-          2.indicator: 雷达边和最大值的数据
+          2.indicatorData: 雷达边和最大值的数据
 
           3.seriesData: series数据
 
@@ -76,17 +82,17 @@ mockData文件夹代表组件的举例数据，传参参考
 
       1.spirit的参数主要有：
 
-          a) symbol: 小图片的链接
+          a) symbolData: 小图片的链接
  
           b) maxData: 最大值
  
-          c) data: series 的数据组，参考官网
+          c) seriesData: series 的数据组，参考官网
 
        2.vehicle的参数主要是：
 
           a) yAxisData: y轴数据
 
-          b) gridLeft: y轴字距离左边的距离
+          b) gridLeftData: y轴字距离左边的距离
 
           c) legendData: legend数据
 
@@ -99,15 +105,15 @@ mockData文件夹代表组件的举例数据，传参参考
 
       数据集总共暴露了5个参数：
 
-          1.source: (dataset -> source) 原始数据，二维数组，具体参考官方文档或示例
+          1.sourceData: (dataset -> source) 原始数据，二维数组，具体参考官方文档或示例
   
-          2.xAxis：x轴。折线图或柱状图所需要配置的参数，具体参考官方文档或示例
+          2.xAxisData：x轴。折线图或柱状图所需要配置的参数，具体参考官方文档或示例
   
-          3.yAxis：y轴。折线图或柱状图所需要配置的参数，具体参考官方文档或示例
+          3.yAxisData：y轴。折线图或柱状图所需要配置的参数，具体参考官方文档或示例
   
-          4.grid:网格参数，具体参考官方文档或示例
+          4.gridData:网格参数，具体参考官方文档或示例
   
-          5.series：系列列表。每个系列通过 type 决定自己的图表类型，具体参考官方文档或示例
+          5.seriesData：系列列表。每个系列通过 type 决定自己的图表类型，具体参考官方文档或示例
   
     八.地图
     

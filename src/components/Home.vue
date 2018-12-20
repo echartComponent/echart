@@ -2,6 +2,10 @@
   <div class="hello">
     <h2>Essential Links</h2>
     <div style="height: 400px;">
+      <MapChart />
+      <PieChart :optionData="pieData.map1"/>
+      <PieChart :optionData="pieData.map2"/>
+      <PieChart :optionData="pieData.map3"/>
       <RadarChart :optionData="radarData"/>
       <VehicleChart :optionData="vehicleData"/>
       <SpiritChart :optionData="spiritData"/>
@@ -19,11 +23,14 @@ import DataSet from '@/components/echarts/Dataset.vue'
 import SpiritChart from '@/components/echarts/Spirit.vue'
 import VehicleChart from '@/components/echarts/Vehicle.vue'
 import RadarChart from '@/components/echarts/Radar.vue'
+import PieChart from '@/components/echarts/Pie.vue'
+import MapChart from '@/components/echarts/Map.vue'
 import { datasetJson } from '@/components/echarts/mockData/dataSetData.js'
 import { lineDataJson } from '@/components/echarts/mockData/lineData.js'
 import { spiritDataJson } from '@/components/echarts/mockData/spiritData.js'
 import { vehicleDataJson } from '@/components/echarts/mockData/vehicleData.js'
 import { radarDataJson } from '@/components/echarts/mockData/radarData.js'
+import { pieDataJson } from '@/components/echarts/mockData/pieData.js'
 export default {
   name: 'HelloWorld',
   components: {
@@ -31,7 +38,9 @@ export default {
     DataSet,
     SpiritChart,
     VehicleChart,
-    RadarChart
+    RadarChart,
+    PieChart,
+    MapChart
   },
   data () {
     return {
@@ -39,7 +48,8 @@ export default {
       dataJson: datasetJson,
       spiritData: spiritDataJson,
       vehicleData: vehicleDataJson,
-      radarData: radarDataJson
+      radarData: radarDataJson,
+      pieData: pieDataJson
     }
   },
   mounted () {

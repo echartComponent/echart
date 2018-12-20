@@ -43,7 +43,7 @@ export default {
   methods: {
     setData (resolve) {
       this.legendConfig.data = this.optionData.legendData || []
-      this.radarConfig.indicator = this.optionData.indicator || []
+      this.radarConfig.indicator = this.optionData.indicatorData || []
       this.seriesConfig = this.optionData.seriesData || []
       for (let item of this.seriesConfig) {
         item.type = this.type

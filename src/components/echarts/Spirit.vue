@@ -117,7 +117,7 @@ export default {
   },
   methods: {
     setData (resolve) {
-      let data = this.optionData.data || []
+      let data = this.optionData.seriesData || []
       let yAxisData = []
       let seriesData = []
       for (let item of data) {

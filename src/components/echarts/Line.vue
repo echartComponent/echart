@@ -98,7 +98,7 @@ export default {
     setData (resolve) {
       this.legendConfig.data = this.optionData.legendData || []
       this.xAxisConfig.data = this.optionData.xAxisData || []
-      this.seriesConfig = this.optionData.series || []
+      this.seriesConfig = this.optionData.seriesData || []
       for (let item of this.seriesConfig) {
         item.type = this.type
       }

@@ -18,7 +18,7 @@ export default {
       type: 'pie',
       tooltipConfig: {
         trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
       },
       seriesConfig: []
     }
@@ -35,7 +35,6 @@ export default {
   methods: {
     setData (resolve) {
       this.legendConfig.data = this.optionData.legendData || []
-      let seriesArr = this.optionData.seriesData
       this.seriesConfig = this.optionData.seriesData
       resolve()
     },
