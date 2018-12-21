@@ -66,11 +66,17 @@ mockData文件夹代表组件的举例数据，传参参考
 
     三.柱状图
 
-    四.散点图
+      主要数据有：
 
-    五.雷达图
+          1.legendData: legend数据
 
-      雷达图数据主要有：
+          2.xAxisData: xAxis数据
+
+          3.seriesData: series数据
+
+    四.雷达图
+
+      数据主要有：
 
           1.legendData： legend数据
 
@@ -78,7 +84,7 @@ mockData文件夹代表组件的举例数据，传参参考
 
           3.seriesData: series数据
 
-    六.象形柱图(spirit和vehicle)
+    五.象形柱图(spirit和vehicle)
 
       1.spirit的参数主要有：
 
@@ -99,7 +105,7 @@ mockData文件夹代表组件的举例数据，传参参考
           d) seriesData: series
 
 
-    七.数据集（dataset）
+    六.数据集（dataset）
   
       数据集是多图的组合，根据需求，我暂时集合了折线图、饼图、柱状图，后期如果需要导入则需要新增导入新的图表
 
@@ -115,6 +121,8 @@ mockData文件夹代表组件的举例数据，传参参考
   
           5.seriesData：系列列表。每个系列通过 type 决定自己的图表类型，具体参考官方文档或示例
   
-    八.地图
+    七.地图
+
+    参数待定
     
 ```

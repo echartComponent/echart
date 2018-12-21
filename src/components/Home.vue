@@ -2,6 +2,7 @@
   <div class="hello">
     <h2>Essential Links</h2>
     <div style="height: 400px;">
+      <BarChart :optionData="barData"/>
       <MapChart />
       <PieChart :optionData="pieData.map1"/>
       <PieChart :optionData="pieData.map2"/>
@@ -25,6 +26,8 @@ import VehicleChart from '@/components/echarts/Vehicle.vue'
 import RadarChart from '@/components/echarts/Radar.vue'
 import PieChart from '@/components/echarts/Pie.vue'
 import MapChart from '@/components/echarts/Map.vue'
+import BarChart from '@/components/echarts/Bar.vue'
+import { barDataJson } from './echarts/mockData/barMockData.js'
 import { datasetJson } from '@/components/echarts/mockData/dataSetData.js'
 import { lineDataJson } from '@/components/echarts/mockData/lineData.js'
 import { spiritDataJson } from '@/components/echarts/mockData/spiritData.js'
@@ -40,7 +43,8 @@ export default {
     VehicleChart,
     RadarChart,
     PieChart,
-    MapChart
+    MapChart,
+    BarChart
   },
   data () {
     return {
@@ -49,7 +53,8 @@ export default {
       spiritData: spiritDataJson,
       vehicleData: vehicleDataJson,
       radarData: radarDataJson,
-      pieData: pieDataJson
+      pieData: pieDataJson,
+      barData: barDataJson
     }
   },
   mounted () {

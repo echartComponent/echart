@@ -1,30 +1,39 @@
-export const extend = function (out) {
-  if (!out) {
-    console.error('where is your container ?')
-    return
+export const extend = (function () {
+  var isObjFunc = function (name) {
+    var toString = Object.prototype.toString
+    return function () {
+      return toString.call(arguments[0]) === '[object ' + name + ']'
+    }
   }
-  var objs = [].slice.call(arguments, 1)
-
-  if (objs.length > 0) {
-    objs.forEach(function (item, index) {
-      if (typeof item !== 'object') {
-        console.error('item' + index + ' is no valid arguments, expected to be object')
-      } else {
-        for (var key in item) {
-          if (item.hasOwnProperty(key)) {
-            if (typeof item[key] === 'object') {
-              out[key] = out[key] || {}
-              extend(out[key], item[key])
-            } else {
-              out[key] = item[key]
-            }
+  let isObject = isObjFunc('Object')
+  let isArray = isObjFunc('Array')
+  let isBoolean = isObjFunc('Boolean')
+  return function extend () {
+    let index = 0
+    let obj, copy, destination, source, i
+    let isDeep = false
+    if (isBoolean(arguments[0])) {
+      index = 1
+      isDeep = arguments[0]
+    }
+    for (i = arguments.length - 1; i > index; i--) {
+      destination = arguments[i - 1]
+      source = arguments[i]
+      if (isObject(source) || isArray(source)) {
+        for (var property in source) {
+          obj = source[property]
+          if (isDeep && (isObject(obj) || isArray(obj))) {
+            copy = isObject(obj) ? {} : []
+            var extended = extend(isDeep, copy, obj)
+            destination[property] = extended
+          } else {
+            destination[property] = source[property]
           }
         }
+      } else {
+        destination = source
       }
-    })
-  } else {
-    console.error('no objs to be copy')
+    }
+    return destination
   }
-
-  return out
-}
+})()
